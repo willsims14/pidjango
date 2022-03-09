@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ya8z&ler=g=oi2eb)#luz-*0r$+*eqn9m0m@vm&*wzi35fwmcn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.86.244", "192.168.86.240"]
+ALLOWED_HOSTS = ["192.168.86.244", "192.168.86.240", "172.17.112.1"]
 
 
 # Application definition
@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'pidjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -105,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
