@@ -20,23 +20,23 @@ class Plant(models.Model):
         return f"<Plant> {self.name}"
 
 
-class Plant_In_Home(Plant):
-    # plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
-    planted_location = models.CharField(max_length=200)
-    date_planted = models.DateField()
+# class Plant_In_Home(Plant):
+#     # plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
+#     quantity = models.IntegerField()
+#     planted_location = models.CharField(max_length=200)
+#     date_planted = models.DateField()
 
-    def __str__(self):
-        return f"<Plant.PlantInHome> {self.plant.name} (Location: {self.planted_location})"
+#     def __str__(self):
+#         return f"<Plant.PlantInHome> {self.plant.name} (Location: {self.planted_location})"
 
 
-class Propogation(Plant):
-    # plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
-    prop_location = models.CharField(max_length=200)
-    date_propped = models.DateField()
+# class Propogation(Plant):
+#     # plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
+#     prop_location = models.CharField(max_length=200)
+#     date_propped = models.DateField()
 
-    def __str__(self):
-        return f"<Plant.Propogation> {self.plant.name} (Location: {self.prop_location})"
+#     def __str__(self):
+#         return f"<Plant.Propogation> {self.plant.name} (Location: {self.prop_location})"
 
-    def was_propogated_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+#     def was_propogated_recently(self):
+#         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
