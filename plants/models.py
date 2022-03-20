@@ -9,7 +9,7 @@ class Plant(models.Model):
     common_name = models.CharField(max_length=200, unique=True)
     scientific_name = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/plants/', blank=True)
+    image = models.ImageField(upload_to='images/plants', blank=True)
     slug = models.SlugField(max_length=200, unique=True)
     meta_created = models.DateTimeField(auto_now_add=True)
     meta_modified = models.DateTimeField(auto_now=True)
