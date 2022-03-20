@@ -4,18 +4,15 @@ from django.db import models
 from django.utils import timezone
 
 
-class BaseModel(models.Model):
-    meta_created = models.DateTimeField(auto_now_add=True)
-    meta_modified = models.DateTimeField(auto_now=True)
-
-
 # Create your models here.
-class Plant(BaseModel):
+class Plant(models.Model):
     common_name = models.CharField(max_length=200, unique=True)
     scientific_name = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to='images/plants', blank=True)
     slug = models.SlugField(max_length=200, unique=True)
+    meta_created = models.DateTimeField(auto_now_add=True)
+    meta_modified = models.DateTimeField(auto_now=True)
 
     # def number_of_propogations(self):
     #     return len(self.propogations)
@@ -34,10 +31,12 @@ class Plant(BaseModel):
 #         return f"<Plant.PlantInHome> {self.plant.common_name} (Location: {self.planted_location})"
 
 
-class Propogation(BaseModel):
+class Propogation(models.Model):
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
     prop_location = models.CharField(max_length=200)
     date_propped = models.DateField()
+    meta_created = models.DateTimeField(auto_now_add=True)
+    meta_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.plant.common_name} (Location: {self.prop_location})"
@@ -46,7 +45,6 @@ class Propogation(BaseModel):
     def create(cls, title):
         book = cls(title=title)
         book.meta_created = timezone.now()
-        book.meta_modified = timezone.now()
         return book
 
     def was_propogated_recently(self):
