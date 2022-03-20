@@ -1,11 +1,13 @@
 {% load static %}
 
 {% if latest_plant_list %}
-    <ul>
-    {% for plant in latest_plant_list %}
-        <li><a href="{% url 'plants:detail' plant.id %}">{{ plant.common_name }}</a></li>
-    {% endfor %}
-    </ul>
+    <div class='container'>
+        <ul>
+        {% for plant in latest_plant_list %}
+            <li><a href="{% url 'plants:detail' plant.id %}">{{ plant.common_name }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
 {% else %}
     <p>No plants are available.</p>
 {% endif %}
