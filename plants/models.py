@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 class Plant(models.Model):
     common_name = models.CharField(max_length=200)
@@ -17,7 +18,7 @@ class Plant(models.Model):
     #     return len(self.propogations)
 
     def __str__(self):
-        return f"<Plant> {self.name}"
+        return f"<Plant> {self.common_name}"
 
 
 # class Plant_In_Home(Plant):
