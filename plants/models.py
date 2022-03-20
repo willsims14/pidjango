@@ -17,8 +17,8 @@ class Plant(models.Model):
     # def number_of_propogations(self):
     #     return len(self.propogations)
 
-    def __str__(self):
-        return f"<Plant> {self.common_name}"
+    # def __str__(self):
+    #     return f"<Plant> {self.common_name}"
 
 
 # class Plant_In_Home(Plant):
