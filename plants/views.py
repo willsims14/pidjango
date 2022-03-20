@@ -13,14 +13,14 @@ class IndexView(generic.ListView):
         return Plant.objects.order_by('-meta_created')[:5]
 
 
-# class DetailView(generic.DetailView):
-#     model = Plant
-#     template_name = 'plants/detail.html'
+class DetailView(generic.DetailView):
+    model = Plant
+    template_name = 'plants/detail.html'
 
 
-def detail(request, plant_id):
-    plant = get_object_or_404(Plant, pk=plant_id)
-    return render(request, 'plants/detail.html', {'plant': plant})
+# def detail(request, plant_id):
+#     plant = get_object_or_404(Plant, pk=plant_id)
+#     return render(request, 'plants/detail.html', {'plant': plant})
 
 # def propogations(request, plant_id):
 #     response = "You're looking at the propogations of plant %s."
