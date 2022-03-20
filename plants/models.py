@@ -41,11 +41,11 @@ class Propogation(models.Model):
     def __str__(self):
         return f"{self.plant.common_name} (Location: {self.prop_location})"
 
-    @classmethod
-    def create(cls, title):
-        book = cls(title=title)
-        book.meta_created = timezone.now()
-        return book
+    # @classmethod
+    # def create(cls, title):
+    #     book = cls(title=title)
+    #     book.meta_created = timezone.now()
+    #     return book
 
     def was_propogated_recently(self):
         return self.date_propped >= timezone.now() - datetime.timedelta(days=1)
