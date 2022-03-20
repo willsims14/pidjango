@@ -9,7 +9,7 @@ class Plant(models.Model):
     common_name = models.CharField(max_length=200, unique=True)
     scientific_name = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to='plants/images')
+    image = models.ImageField(upload_to='images/plants/', blank=True)
     slug = models.SlugField(max_length=200, unique=True)
     meta_created = models.DateTimeField(auto_now_add=True)
     meta_modified = models.DateTimeField(auto_now=True)
@@ -17,8 +17,8 @@ class Plant(models.Model):
     # def number_of_propogations(self):
     #     return len(self.propogations)
 
-    # def __str__(self):
-    #     return f"<Plant> {self.common_name}"
+    def __str__(self):
+        return f"<Plant> {self.common_name}"
 
 
 # class Plant_In_Home(Plant):
