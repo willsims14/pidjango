@@ -37,7 +37,7 @@ class Propogation(models.Model):
     date_propped = models.DateField()
 
     def __str__(self):
-        return f"<Plant.Propogation> {self.plant.name} (Location: {self.prop_location})"
+        return f"<Plant.Propogation> {self.plant.common_name} (Location: {self.prop_location})"
 
     def was_propogated_recently(self):
         return self.date_propped >= timezone.now() - datetime.timedelta(days=1)
