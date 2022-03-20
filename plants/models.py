@@ -6,7 +6,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Plant(models.Model):
-    common_name = models.CharField(max_length=200)
+    common_name = models.CharField(max_length=200, unique=True)
     scientific_name = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to='plants/images')
