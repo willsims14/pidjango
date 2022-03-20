@@ -28,7 +28,7 @@ class Plant(models.Model):
 #     date_planted = models.DateField()
 
 #     def __str__(self):
-#         return f"<Plant.PlantInHome> {self.plant.name} (Location: {self.planted_location})"
+#         return f"<Plant.PlantInHome> {self.plant.common_name} (Location: {self.planted_location})"
 
 
 class Propogation(models.Model):

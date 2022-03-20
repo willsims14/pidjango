@@ -1,9 +1,9 @@
-{% if latest_question_list %}
+{% if latest_plant_list %}
     <ul>
-    {% for question in latest_question_list %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% for plant in latest_plant_list %}
+        <li><a href="/plants/{{ plant.id }}/">{{ plant.common_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>No plants are available.</p>
 {% endif %}
