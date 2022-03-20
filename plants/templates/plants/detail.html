@@ -4,9 +4,13 @@
     <p>{{ plant.description }}</p>
 </div>
 <div class='container'>
+{% if plant.propogations %}
     <ul>
         {% for prop in plant.propogations %}
             <li>[{{ prop.date_propped }}] {{ prop.prop_location }}</li>
         {% endfor %}
     </ul>
+{% else %}
+    <p>No propogations</p>
+{% endif %}
 </div>
