@@ -8,5 +8,4 @@ class PropogationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Plant)
-# admin.site.register(Propogation)
-admin.site.register(PropogationAdmin)
+admin.site.register(Propogation, PropogationAdmin)
