@@ -37,7 +37,7 @@ ALLOWED_HOSTS = [
 # Application definition
 INSTALLED_APPS = [
     'plants',
-    'plants.apps.PlantsConfig',
+    # 'plants.apps.PlantsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'pidjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangodb',
+        'USER': 'djangouser',
+        'PASSWORD': 'butt_stuff42',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
