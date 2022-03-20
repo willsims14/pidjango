@@ -1,7 +1,12 @@
-<h1>{{ plant.common_name }}</h1>
-
-<ul>
-    {% for prop in plant.propogations %}
-        <li>[{{ prop.date_propped }}] {{ prop.prop_location }}</li>
-    {% endfor %}
-</ul>
+<div>
+    <h1>{{ plant.common_name }}</h1>
+    <h4>{{ plant.scientific_name }}</h4>
+    <p>{{ plant.description }}</p>
+</div>
+<div>
+    <ul>
+        {% for prop in plant.propogations %}
+            <li>[{{ prop.date_propped }}] {{ prop.prop_location }}</li>
+        {% endfor %}
+    </ul>
+</div>
