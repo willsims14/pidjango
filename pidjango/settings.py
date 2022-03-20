@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
 
 # Application definition
 INSTALLED_APPS = [
+    'materialize',
     'plants.apps.PlantsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
