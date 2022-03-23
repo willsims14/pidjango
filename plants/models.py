@@ -1,7 +1,8 @@
 import datetime
 
-from django.db import models
+from django.shortcuts import reverse
 from django.utils import timezone
+from django.db import models
 
 
 # Create your models here.
@@ -19,6 +20,12 @@ class Plant(models.Model):
 
     def __str__(self):
         return f"{self.common_name}"
+
+    def get_absolute_url(self):
+        return reverse(
+            "plants:detail", kwargs={
+            "pk": self.pk
+        })
 
 
 # class Plant_In_Home(Plant):
